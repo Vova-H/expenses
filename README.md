@@ -24,7 +24,7 @@ A minimal and functional mobile application for tracking personal expenses. Buil
 ## 📦 Installation & Setup
 
 1. **Clone the repo**
-   git clone https://github.com/your-username/expenses-tracker.git
+   git clone https://github.com/Vova-H/expenses-tracker.git
    cd expenses-tracker
    
 
