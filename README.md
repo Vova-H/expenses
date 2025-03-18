@@ -1,97 +1,67 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Personal Expenses Tracker App
 
-# Getting Started
+A minimal and functional mobile application for tracking personal expenses. Built with React Native and Firebase, this app allows users to securely manage their financial transactions from their mobile devices.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Features
 
-## Step 1: Start Metro
+- 🔐 Email/password authentication (Firebase Auth)
+- ➕ Add, edit, delete expenses
+- 📋 View expense list sorted by date (latest first)
+- 📅 Date picker for selecting transaction dates
+- 🗂️ Category selection (e.g., Food, Transport, Bills)
+- 💰 Multi-currency support
+- 🎨 Clean and minimal UI
+- 🔒 Secure per-user data access (Firestore rules)
+- ⚙️ State management with Redux Toolkit
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🛠️ Tech Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **Frontend:** React Native (CLI setup), TypeScript
+- **Backend:** Firebase (Authentication + Firestore Database)
+- **State Management:** Redux Toolkit
+- **UI Library:** Native styles
 
-```sh
-# Using npm
-npm start
+## 📦 Installation & Setup
 
-# OR using Yarn
-yarn start
-```
+1. **Clone the repo**
+   git clone https://github.com/your-username/expenses-tracker.git
+   cd expenses-tracker
+   
 
-## Step 2: Build and run your app
+2. **Install dependencies**
+   npm install
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+3. **Configure Firebase**
+   - Create a Firebase project.
+   - Enable Email/Password authentication.
+   - Create a Firestore database.
+   - Replace your Firebase config inside the app.
 
-### Android
+4. **Run the app**
+   npx react-native run-android # or run-ios
 
-```sh
-# Using npm
-npm run android
+## 🤔 Why Firebase?
 
-# OR using Yarn
-yarn android
-```
+Firebase was chosen for its simplicity and strong integration with React Native:
+- Easy setup for authentication data storage
+- Built-in security rules for access control
+- Scalable for future growth
 
-### iOS
+## 🧪 Known Issues / Limitations
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+- No offline support implemented.
+- No persistent login if user manually clears app data.
+- No unit tests added (optional based on scope).
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 👨‍💻 Author
+- Your Name – Volodymyr
 
-```sh
-bundle install
-```
+## 📲 Demo APK
+To test the app without setting up the environment locally, you can download the prebuilt APK:
 
-Then, and every time you update your native dependencies, run:
+👉 Download ExpensesApp.apk
+https://drive.google.com/file/d/102zbStXeSiOUPpYS6y-Xs-vjz7utXcaO/view?usp=drive_link
 
-```sh
-bundle exec pod install
-```
+⚠️ The app is built with real Firebase credentials. Before committing the code to the repository, the firebaseConfig.ts file was replaced with a placeholder version containing fake keys.
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+If you'd like to run the project locally with your own Firebase setup, rename firebaseConfig.example.ts to firebaseConfig.ts and paste your credentials there.
