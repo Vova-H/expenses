@@ -83,48 +83,63 @@ const ExpenseForm: React.FC<FormProps> = ({
         )}
       />
 
-        <View>
-            <View style={styles.row}>
-                <Controller
-                    control={control}
-                    name="amount"
-                    render={({ field: { onChange, value } }) => (
-                        <TextInput
-                            placeholder="Amount"
-                            placeholderTextColor="#999"
-                            style={[
-                                styles.input,
-                                styles.amountInput,
-                                errors.amount && styles.inputError,
-                            ]}
-                            keyboardType="numeric"
-                            value={value}
-                            onChangeText={onChange}
-                        />
-                    )}
-                />
+      <View>
+        <View style={styles.row}>
+          <Controller
+            control={control}
+            name="amount"
+            render={({field: {onChange, value}}) => (
+              <TextInput
+                placeholder="Amount"
+                placeholderTextColor="#999"
+                style={[
+                  styles.input,
+                  styles.amountInput,
+                  errors.amount && styles.inputError,
+                ]}
+                keyboardType="numeric"
+                value={value}
+                onChangeText={onChange}
+              />
+            )}
+          />
 
-                <Controller
-                    control={control}
-                    name="currency"
-                    render={({ field: { onChange, value } }) => (
-                        <View style={[styles.input, styles.currencyPicker]}>
-                            <Picker
-                                selectedValue={value}
-                                onValueChange={onChange}
-                                dropdownIconColor="#333"
-                            >
-                                <Picker.Item label="₴" value="UAH" />
-                                <Picker.Item label="$" value="USD" />
-                                <Picker.Item label="€" value="EUR" />
-                            </Picker>
-                        </View>
-                    )}
-                />
-            </View>
-            {errors.amount && <Text style={styles.error}>{errors.amount.message}</Text>}
-            {errors.currency && <Text style={styles.error}>{errors.currency.message}</Text>}
+          <Controller
+            control={control}
+            name="currency"
+            render={({field: {onChange, value}}) => (
+              <View style={[styles.input, styles.currencyPicker]}>
+                <Picker
+                  selectedValue={value}
+                  onValueChange={onChange}
+                  dropdownIconColor="#333">
+                  <Picker.Item
+                    label="₴"
+                    value="UAH"
+                    style={styles.currencyItem}
+                  />
+                  <Picker.Item
+                    label="$"
+                    value="USD"
+                    style={styles.currencyItem}
+                  />
+                  <Picker.Item
+                    label="€"
+                    value="EUR"
+                    style={styles.currencyItem}
+                  />
+                </Picker>
+              </View>
+            )}
+          />
         </View>
+        {errors.amount && (
+          <Text style={styles.error}>{errors.amount.message}</Text>
+        )}
+        {errors.currency && (
+          <Text style={styles.error}>{errors.currency.message}</Text>
+        )}
+      </View>
 
       <Controller
         control={control}
@@ -175,6 +190,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     fontSize: 16,
+    color: '#000',
     borderWidth: 1,
     borderColor: '#ddd',
   },
@@ -195,21 +211,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
-    row: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 8,
-    },
-    amountInput: {
-        flex: 1,
-    },
-    currencyPicker: {
-        width: 110,
-        height: 50,
-        justifyContent: 'center',
-    },
-
-
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  amountInput: {
+    flex: 1,
+  },
+  currencyPicker: {
+    width: 110,
+    height: 50,
+    justifyContent: 'center',
+  },
+  currencyItem: {
+    color: '#000',
+  },
 });
 
 export default ExpenseForm;
