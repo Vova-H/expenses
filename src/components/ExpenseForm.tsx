@@ -112,7 +112,8 @@ const ExpenseForm: React.FC<FormProps> = ({
                 <Picker
                   selectedValue={value}
                   onValueChange={onChange}
-                  dropdownIconColor="#333">
+                  dropdownIconColor="#000"
+                >
                   <Picker.Item
                     label="₴"
                     value="UAH"
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
   },
   dateText: {
     fontSize: 16,
-    color: '#333',
+    color: '#000',
   },
   row: {
     flexDirection: 'row',
@@ -218,14 +219,17 @@ const styles = StyleSheet.create({
   },
   amountInput: {
     flex: 1,
+    color: '#000',
   },
   currencyPicker: {
     width: 110,
-    height: 50,
+    height: 60,
     justifyContent: 'center',
   },
   currencyItem: {
     color: '#000',
+    backgroundColor: '#f5f5f5',
+    height: 50,
   },
 });
 
